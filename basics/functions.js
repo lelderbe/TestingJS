@@ -1,3 +1,4 @@
+// simple functions
 function ex_functions_1() {
 	function plus1(x) {
 		return x + 1;
@@ -12,7 +13,7 @@ function ex_functions_1() {
 	console.log(square(plus1(y)));
 }
 
-ex_functions_1();
+// ex_functions_1();
 
 // arrow functions
 function ex_functions_2() {
@@ -24,4 +25,27 @@ function ex_functions_2() {
 	console.log(square(plus1(y)));
 }
 
-ex_functions_2();
+// ex_functions_2();
+
+// передача функции в параметре
+function ex_functions_3() {
+	function func1(n) {
+		console.log('func1:', n);
+	}
+
+	function func2(n, log) {
+		if (log)
+			log(n);
+		return n * n;
+	}
+
+	function func3(n , log) {
+		log?.(n);
+		return n * n;
+	}
+
+	func2(3, func1);
+	func3(13, func1);
+}
+
+ex_functions_3();

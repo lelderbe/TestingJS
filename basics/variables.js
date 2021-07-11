@@ -5,6 +5,10 @@ function ex_vars_1() {
 	let c = 5;
 	let d = false;
 	let s = '3';
+	let billion = 1_000_000_000;
+	let bytes = 0x89_AB_CD_EF;
+	let bits = 0b0001_1101_0111;
+	let octal = 0o77;
 	
 	console.log('a = 1200 / 40 :', a, ',', typeof(a));
 	console.log('b = 1200 / 40.2 :', b, ',', typeof(b));
@@ -12,6 +16,7 @@ function ex_vars_1() {
 	console.log('c = 5 :', c, ',', typeof(c));
 	console.log('d = false :', d, ',', typeof(d));
 	console.log("s = '3' :", s, ',', typeof(s));
+	console.log(`billion: ${billion}, bytes: ${bytes}, bits: ${bits}, octal: ${octal}`);
 
 	console.log('\n------- types & conversations --------');
 	console.log('a :', a, ',', typeof(a));				// number
@@ -36,7 +41,7 @@ function ex_vars_1() {
 	console.log('(new Date()).toLocaleString() :', (new Date()).toLocaleString());
 }
 
-// ex_vars_1();
+ex_vars_1();
 
 function ex_vars_2() {
 	console.log(a);
@@ -67,4 +72,22 @@ function ex_vars_3() {
 	console.log('x :', x, 'y :', y, 'x === y :', x === y);
 }
 
-ex_vars_3();
+// ex_vars_3();
+
+function ex_vars_4() {
+	function ret_2() {
+		return [11, 5, 3];
+	}
+
+	let arr = [1, 2, 3];
+	let x, y;
+	[x, y] = arr;
+	console.log('x:', x, 'y:', y);
+	[x, y] = [y, x];
+	console.log('x:', x, 'y:', y);
+	[x, y] = ret_2();
+	console.log('x:', x, 'y:', y);
+
+}
+
+ex_vars_4();

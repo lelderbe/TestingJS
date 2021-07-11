@@ -38,6 +38,29 @@ function ex_objects() {
 	// 	console.log(value)
 	// }
 
+	for (const [key, value] of Object.entries(book)) {
+		console.log('key:', key, "value:", value);
+	}
+
+	// деструктурирующее присванивание
+	let color = {
+		r: 0.0,
+		g: 0.5,
+		b: 0.9,
+		a: 1.0,
+	}
+
+	const {r, g, b} = color;
+	console.log('r:', r, 'g:', g, 'b:', b);
+
+	// условный доступ к свойствам
+	console.log('color.g:', color.g);
+	console.log('color.f:', color.f);
+	color = null;
+	console.log('color?.f?.g:', color?.f?.g);
+
+
 }
 
 ex_objects();
+
