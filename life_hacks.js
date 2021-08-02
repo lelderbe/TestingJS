@@ -12,19 +12,20 @@ function ex_life_hacks() {
 	
 	let max_witdh;
 	prefs = {}
-	//prefs.max_witdh = 100;
+	// prefs.max_witdh = 100;
+	prefs.max_witdh = 0;
 	
 	max = max_witdh && prefs.max_witdh && 500;
-	console.log(max);
+	console.log('max = max_witdh && prefs.max_witdh && 500 :', max);
 	max = max_witdh || prefs.max_witdh || 500;
-	console.log(max);
-	
 	console.log('max = max_witdh || prefs.max_witdh || 500 :', max);
+	max = max_witdh ?? prefs.max_witdh ?? 500;
+	console.log('max = max_witdh ?? prefs.max_witdh ?? 500 :', max);
 
-	console.log('this :', this);
+	// console.log('this :', this);
 }
 
 ex_life_hacks();
 
-console.log('this :', this);
+// console.log('this :', this);
 
