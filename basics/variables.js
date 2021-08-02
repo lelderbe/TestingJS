@@ -1,6 +1,9 @@
+'use strict'
+// a = 5;				// ReferenceError
+
 function ex_vars_1() {
 	console.log('\n------------- variables --------------');
-	let a = 1200 / 40;
+	let a = 1200 / 41;
 	let b = 1200 / 40.2;
 	let c = 5;
 	let d = false;
@@ -26,11 +29,19 @@ function ex_vars_1() {
 	console.log('s - 0 :', s - 0, ',', typeof(s - 0));		// number
 	console.log('!!s :', s, ',', typeof(!!s));			// boolean
 
-	console.log("'2' + '5':", '2' + '5');              // 25
-	console.log("'2' * '5':", '2' * '5');              // 10
+	console.log("'2' + '5':", '2' + '5');				// 25
+	console.log("2 + '5':", 2 + '5');					// 25
+	console.log("'2' * '5':", '2' * '5');				// 10
+	console.log("2 * '5':", 2 * '5');					// 10
+	console.log("'2' * 5:", '2' * 5);					// 10
 
 	console.log('typeof("string") :', typeof("string"));
 	console.log('typeof(new String("string")) :', typeof(new String("string")));
+
+	let arr = [1, 2, 3];
+	console.log('arr instanceof Array :', arr instanceof Array);
+	console.log('arr instanceof Object :', arr instanceof Object);
+	console.log('arr instanceof Number :', arr instanceof Number);
 
 	console.log('\n------------ ++ and -- ---------------');
 	let i;
@@ -39,11 +50,14 @@ function ex_vars_1() {
 
 	console.log('\n-------------- Date() ----------------');
 	console.log('(new Date()).toLocaleString() :', (new Date()).toLocaleString());
+
+
 }
 
-ex_vars_1();
+// ex_vars_1();
 
 function ex_vars_2() {
+	console.log('\n--------------- TTL ------------------');
 	console.log(a);
 
 	// let a;
@@ -53,41 +67,47 @@ function ex_vars_2() {
 
 	{
 		console.log(a);
-		b = 3;
+		let b = 3;
 		console.log(b);
 	}
 
 	// b = 4;
-	console.log(b);
-
+	// console.log(b);
 }
 
-// ex_vars_2();
+ex_vars_2();
 
 function ex_vars_3() {
+	console.log('\n------------- boolean ----------------');
 	let x = 3;
 	let y = '3';
 	// let y = 3;
 	console.log('x :', x, 'y :', y, 'x == y :', x == y);
 	console.log('x :', x, 'y :', y, 'x === y :', x === y);
+	let o = {};
+	console.log('o = {} && true :', o && true);
+	console.log('undefined == false : ', undefined == false);
+	console.log('undefined == null : ', undefined == null);
+	// ...
 }
 
-// ex_vars_3();
+ex_vars_3();
 
 function ex_vars_4() {
+	console.log('\n--- destructuring assignment [x, y] --');
 	function ret_2() {
 		return [11, 5, 3];
 	}
 
 	let arr = [1, 2, 3];
 	let x, y;
+	console.log('arr:', arr);
 	[x, y] = arr;
-	console.log('x:', x, 'y:', y);
+	console.log('[x, y] = arr :', 'x:', x, 'y:', y);
 	[x, y] = [y, x];
-	console.log('x:', x, 'y:', y);
+	console.log('[x, y] = [y, x] :', 'x:', x, 'y:', y);
 	[x, y] = ret_2();
 	console.log('x:', x, 'y:', y);
-
 }
 
 ex_vars_4();
