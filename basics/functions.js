@@ -48,4 +48,16 @@ function ex_functions_3() {
 	func3(13, func1);
 }
 
-ex_functions_3();
+// ex_functions_3();
+
+
+function ex_functions_4() {
+	function f1(a) {
+		console.log(a);
+	}
+
+	f1();
+	// console.log(f1());
+}
+
+ex_functions_4();
