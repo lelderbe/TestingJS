@@ -501,4 +501,96 @@ function ex10() {
 	}
 }
 
-ex10();
+// ex10();
+
+function ex11() {
+	console.log('\n---------- Object.keys(), values(), entries() -----------');
+	{
+		let o = {
+			name: 'John',
+			age: 20,
+		}
+
+		console.log('object:', o);
+		console.log('.keys():', Object.keys(o));
+		console.log('.values():', Object.values(o));
+		console.log('.entries():', Object.entries(o));
+	}
+
+	console.log('\n---------- Task: Сумма свойств объекта -----------');
+	{
+		function sumSalaries(salaries) {
+			let result = 0;
+			for (let value of Object.values(salaries)) {
+				result += value;
+			}
+			return result;
+		}
+
+		function sumSalaries2(salaries) {
+			return Object.values(salaries).reduce((acc, value) => acc + value, 0);
+		}
+
+		const salaries = {
+			"John": 100,
+			"Pete": 300,
+			"Mary": 250
+		};
+		console.log(sumSalaries(salaries)); // 650
+		console.log(sumSalaries2(salaries)); // 650
+	}
+
+	console.log('\n---------- Task: Подсчёт количества свойств объекта -----------');
+	{
+		function count(obj) {
+			return Object.keys(obj).length;
+		}
+
+		const user = {
+			name: 'John',
+			age: 30
+		};
+		console.log(count(user)); // 2
+	}
+}
+
+// ex11();
+
+function ex12() {
+	console.log('\n---------- Task: Деструктурирующее присваивание -----------');
+	{
+		const user = { name: "John", years: 30 };
+
+		const { name, years : age, isAdmin = false } = user;
+
+		console.log(name); // John
+		console.log(age); // 30
+		console.log(isAdmin); // false
+	}
+
+	console.log('\n---------- Task: Максимальная зарплата -----------');
+	{
+		function topSalary(salaries) {
+			let maxName = null;
+			let maxSalary = 0;
+
+			for (const [name, salary] of Object.entries(salaries)) {
+				if (salary > maxSalary) {
+					maxSalary = salary;
+					maxName = name;
+				}
+			}
+			return maxName;
+		}
+
+		const salaries = {
+			"John": 100,
+			"Pete": 300,
+			"Mary": 250
+		};
+
+		console.log(topSalary(salaries));
+	}
+}
+
+ex12();
