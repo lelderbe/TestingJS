@@ -28,5 +28,39 @@ function ex02() {
 	console.log('finished');
 }
 
-ex02();
+// ex02();
 
+function ex03() {
+	console.log('\n------------ Task: Вывод каждую секунду via setInterval ---------------');
+	{
+		function printNumbers(from, to) {
+			let value = from - 1;
+			let id = setInterval(function f() {
+				if (value < to) {
+					console.log(++value);
+				} else {
+					clearInterval(id);
+				}
+			}, 1000);
+		}
+
+		printNumbers(1, 5);
+	}
+
+	console.log('\n------------ Task: Вывод каждую секунду via setTimeout ---------------');
+	{
+		function printNumbers(from, to) {
+			let value = from - 1;
+			setTimeout(function f() {
+				if (value < to) {
+					console.log(++value);
+					setTimeout(f, 1000);
+				}
+			}, 0);
+		}
+
+		printNumbers(1, 5);
+	}
+}
+
+ex03();
