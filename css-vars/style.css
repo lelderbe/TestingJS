@@ -1,0 +1,19 @@
+:root {
+  --grey: #ccc;
+  --white: #fff;
+  --black: #00f;
+  --color-primary: var(--grey);
+  --color-text-primary: var(--black);
+}
+
+html[data-theme='dark'] {
+  --grey: #000;
+  --black: #fff;
+}
+
+.card {
+  display: inline-block;
+  padding: 50px;
+  color: var(--color-text-primary);
+  background: var(--color-primary);
+}
