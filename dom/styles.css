@@ -1,0 +1,13 @@
+.cards {
+  border: 1px solid #000;
+}
+
+.card {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: blue;
+}
