@@ -26,6 +26,7 @@ function ex01() {
 		console.log('+value.toFixed(2):', +value.toFixed(2));
 		console.log('+value.toFixed(1):', +value.toFixed(1));
 		console.log('+value.toFixed(0):', +value.toFixed(0));
+		console.log('parseInt(value):', parseInt(value));
 	}
 
 	console.log('\n------------------ precision ------------------');
@@ -90,7 +91,7 @@ function ex01() {
 	}
 }
 
-// ex01();
+ex01();
 
 function ex02() {
 	{

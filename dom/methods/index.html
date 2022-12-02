@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input:hover {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<p id="blue-text" onclick=abc()>What's your hyper skill?</p>
+<p>What's your hyper skill?</p>
+<input id="inp"></input>
+<script>
+
+    function abc() {
+        console.log("inside abc");
+    }
+
+    // let element = document.getElementById("blue-text"); // get the element by id
+    let element = document.querySelector("p"); // get the element by selector
+    element = document.querySelector("p"); // get the element by selector
+    console.log(element);
+    element.style.color = "blue";
+    // element.hidden = true;
+
+    // let arr = document.querySelectorAll("p");
+    let arr = document.querySelectorAll("#blue-text");
+    arr[0].style.color = "red";
+    // arr[1].style.color = "green";
+
+    document.addEventListener("click", function() {
+        console.log("There's been a browser event");
+    });
+
+    document.getElementById("inp").addEventListener("keypress", function() {
+        // body
+        console.log('key pressed');
+    });
+
+    document.getElementById("inp").addEventListener("click", function() {
+        // body
+        console.log('clicked');
+    });
+
+    arr = [1, 2, 3];
+    console.log(arr.length);
+    arr[5] = 10;
+    console.log(arr.length);
+    console.log(arr);
+
+    let fibonacciSequence = [];
+    fibonacciSequence.push(0);
+    fibonacciSequence.push(1);
+    fibonacciSequence.push(1);
+    fibonacciSequence.push(2);
+    fibonacciSequence.push(3);
+    fibonacciSequence.push(5);
+    fibonacciSequence.push(8);
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+    console.log(fibonacciSequence.shift());
+
+    function getName(email) {
+        return email.split('@')[0];
+    }
+
+    console.log(getName('noeno@no.no'));
+</script>
+</body>
+</html>

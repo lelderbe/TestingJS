@@ -1,3 +1,7 @@
+function factorial(n) {
+  return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
 function factorial_recursion(n) {
 	if (n == 1) {
 		return 1;
@@ -13,5 +17,6 @@ function factorial_iter(n) {
 	return result;
 }
 
+console.log(factorial(5));
 console.log(factorial_recursion(5));
 console.log(factorial_iter(5));

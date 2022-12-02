@@ -51,10 +51,11 @@ function ex_vars_1() {
 	console.log('\n-------------- Date() ----------------');
 	console.log('(new Date()).toLocaleString() :', (new Date()).toLocaleString());
 
-
+	console.log(typeof Symbol('id'));
+	console.log(typeof console.log);
 }
 
-// ex_vars_1();
+ex_vars_1();
 
 function ex_vars_2() {
 	console.log('\n--------------- TTL ------------------');
@@ -335,78 +336,15 @@ function ex11() {
 
 // ex11();
 
-function ex12() {
-	console.log('\n------------ function declaration ---------------');
-	function f1() {	// function declaration
-		console.log('Hi');
-	}
+const number = 168;
 
-	f1();
-	console.log(f1);
-	let f2 = f1;
-	f2();
+const arr = Array.from(String(number));
 
-	console.log('\n------------ function expression ---------------');
-	let f3 = function() {
-		console.log('Hi from f3');
-	};
+console.log(arr);
 
-	console.log(f3);
-	f3();
-	let f4 = f3;
-	f4();
-
-	console.log('\n------------ callbacks functions ---------------');
-	function ask(question, yes, no) {
-		if (question) {
-			yes();
-		} else {
-			no();
-		}
-	}
-
-	function f_yes() {
-		console.log('YES!');
-	}
-
-	ask(true, function(){ console.log('yes');}, function(){ console.log('no way!');});
-	ask(false, function(){ console.log('yes');}, function(){ console.log('no way!');});
-	ask(true, f_yes, function(){ console.log('no way!');});
+if (arr.includes('6') && arr.includes('8')) {
+	console.log('Not Lucky');
+} else if (arr.includes('6') || arr.includes('8')) {
+	console.log('Lucky');
 }
 
-// ex12();
-
-function ex13() {
-	console.log('\n-------------- arrow functions ---------------');
-	function sum1(a, b) {
-		return a + b;
-	}
-	let sum2 = function(a, b) { return a + b; };
-	let sum3 = (a, b) => a + b;
-
-	console.log(sum1(2, 3));
-	console.log(sum2(2, 3));
-	console.log(sum3(2, 3));
-
-	let double = n => n * 2;
-	console.log(double(5));
-
-	let hello = () => 'Hello';
-	console.log(hello());
-
-	let sum = (a, b) => {
-		let result = a + b;
-		return result;
-	};
-	console.log(sum(1, 2));
-
-	let f1 = (a1, a2, ...args) => console.log(args);
-	f1(1, 2, 3, 4, 5);
-
-	let str = `first line
-	second line
-	and third line`;
-	console.log(str);
-}
-
-ex13();

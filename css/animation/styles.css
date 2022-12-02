@@ -1,0 +1,29 @@
+.c1 {
+    animation-name: move-div;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: yellowgreen;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+}
+
+@keyframes move-div {
+    0% {
+        /* CSS properties */
+        top: 0;
+        left: 0;
+    }
+    50% {
+        /* CSS properties */
+        top: 0;
+        left: 500px;
+    }
+    100% {
+        /* CSS properties */
+        top: 0;
+        left: 0;
+    }
+}

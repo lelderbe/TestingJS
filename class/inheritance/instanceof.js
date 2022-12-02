@@ -10,7 +10,7 @@ function ex01() {
 	console.log('abc' instanceof Object);
 }
 
-// ex01();
+ex01();
 
 function ex02() {
 	console.log('\n-------------- Symbol.hasInstance -----------------');
@@ -40,4 +40,4 @@ function ex03() {
 	// rabbit.__proto__.__proto__ === Animal.prototype (совпадение!)
 }
 
-ex03();
+// ex03();

@@ -132,7 +132,7 @@ function ex05() {
 	console.log(str);
 }
 
-ex05();
+// ex05();
 
 function ex06() {
 	console.log('\n------------ Rest/Spread ---------------');
@@ -153,4 +153,59 @@ function ex06() {
 	}
 }
 
-ex06();
+// ex06();
+
+function ex07() {
+  // 'use strict';
+	console.log('\n------------ "this" and functions ---------------');
+
+  const o = {
+    a: 42,
+    f0() {
+      console.log(this, this?.a);
+    },
+    f: () => {
+      console.log(this, this?.a);
+    },
+    checkInnerFunc() {
+      const self = this;
+      console.log('this === o:', this === o);
+
+      const inner0 = (function() {
+        console.log('inner0 this === o:', this === o);
+        console.log('inner0 self === o:', self === o);
+      }).bind(this);
+
+      // inner = inner.bind(this);
+      inner();
+      // inner.call(self);
+      inner0();
+
+      function inner() {
+        console.log('inner this === o:', this === o);
+        console.log('inner self === o:', self === o);
+      }
+
+      const innerArrow = () => {
+        console.log('innerArrow this === o:', this === o);
+      }
+
+      innerArrow();
+    }
+  };
+  const f1 = function() { console.log(this, this?.a); };
+  const f2 = () => { console.log(this, this?.a); };
+
+  o.f1 = f1;
+  o.f2 = f2;
+
+  // o.f0();
+  // o.f1();
+  // o.f2();
+  // o.f();
+  // f2.call(o);
+
+  o.checkInnerFunc();
+}
+
+ex07();
