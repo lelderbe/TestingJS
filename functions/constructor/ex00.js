@@ -1,5 +1,7 @@
 function Range(from, to) {
-  if (!new.target) return new Range(from, to);
+  if (!new.target) {
+    return new Range(from, to);
+  }
   this.from = from;
   this.to = to;
 }
