@@ -1,7 +1,13 @@
-function benchmark() {
-	console.time('label');
-	for (let i = 0; i < 1_000_000_000; i++);
-	console.timeEnd('label');
+export function benchmark(func, repeat = 1) {
+    for (let i = 0; i < repeat; i++) {
+        console.time(func.name);
+        func();
+        console.timeEnd(func.name);
+    }
 }
 
-benchmark();
+export function benchmark2(func) {
+    const start = Date.now();
+    func();
+    console.log(func.name, Date.now() - start);
+}
